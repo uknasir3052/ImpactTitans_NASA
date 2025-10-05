@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
 import { Zap, MapPin, Calculator, AlertTriangle } from 'lucide-react';
-import Navigation from '@/react-app/components/Navigation';
-import ImpactMap from '@/react-app/components/ImpactMap';
+import Navigation from '../components/Navigation';
+import ImpactMap from '../components/ImpactMap';
 
 interface SimulationResult {
   crater_diameter_km: number;

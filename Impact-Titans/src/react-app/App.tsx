@@ -1,9 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-import Landing from "@/react-app/pages/Landing";
-import Dashboard from "@/react-app/pages/Dashboard";
-import Visualization3D from "@/react-app/pages/Visualization3D";
-import Simulation from "@/react-app/pages/Simulation";
-import Game from "@/react-app/pages/Game";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "../react-app/pages/Landing";
+import Dashboard from "../react-app/pages/Dashboard";
+import Visualization3D from "../react-app/pages/Visualization3D";
+import Simulation from "../react-app/pages/Simulation";
+import Game from "../react-app/pages/Game";
 
 export default function App() {
   return (
