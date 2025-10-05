@@ -3,7 +3,6 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContaine
 import { Zap, MapPin, Calculator, AlertTriangle } from 'lucide-react';
 import Navigation from '../components/Navigation';
 import ImpactMap from '../components/ImpactMap';
-import '../../worker/index';
 
 interface SimulationResult {
   crater_diameter_km: number;
@@ -169,7 +168,11 @@ export default function Simulation() {
                   </div>
 
                   {/* Run Simulation Button */}
-                  <button onClick={runSimulation} disabled={loading} className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2">
+                  <button
+                    onClick={runSimulation}
+                    disabled={loading}
+                    className="w-full bg-gradient-to-r from-orange-500 to-red-600 hover:from-orange-600 hover:to-red-700 disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 px-4 rounded-lg transition-all duration-200 flex items-center justify-center gap-2"
+                  >
                     {loading ? (
                       <>
                         <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>

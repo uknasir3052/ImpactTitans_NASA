@@ -10,9 +10,10 @@ app.use('*', cors());
 // NASA API endpoints
 app.get('/api/asteroids', async (c) => {
   try {
-    const NASA_API_KEY = "DwWOc4v2hfaF1EWJxGwZxHQzi48jSdWWK1eqWEYD" ;
+    const NASA_API_KEY = c.env.NASA_API_KEY || 'DEMO_KEY';
     
     // Fetch Near-Earth Objects from NASA API
+    
     const today = new Date().toISOString().split('T')[0];
     const endDate = new Date();
     endDate.setDate(endDate.getDate() + 7);
@@ -229,13 +230,13 @@ app.get('/api/calculate_trajectory', async (c) => {
     return c.json({ error: 'Failed to calculate trajectory' }, 500);
   }
 });
-// Impact simulation endpoint
+
 app.post('/api/calculate-impact', async (c) => {
   try {
     const { asteroid_size_km, impact_velocity_km_s, impact_location } = await c.req.json();
 
     // Simple impact calculations (in reality would be much more complex)
-    const kinetic_energy = 0.5 * (asteroid_size_km * 3) * 2600 * (impact_velocity_km_s * 2);
+    const kinetic_energy = 0.5 * (asteroid_size_km ** 3) * 2600 * (impact_velocity_km_s ** 2);
     const crater_diameter_km = Math.pow(kinetic_energy / 1e15, 0.25) * 1.8;
     const tnt_equivalent_megatons = kinetic_energy / 4.184e15;
     const seismic_magnitude = Math.log10(kinetic_energy) - 4.8;
@@ -253,8 +254,8 @@ app.post('/api/calculate-impact', async (c) => {
 
     return c.json(result);
   } catch (error) {
-    return c.json({ error: 'Failed to calculate impact' }, 500);
-  }
+    return c.json({ error: 'Failed to calculate impact' }, 500);
+  }
 });
 
 // Health check endpoint
@@ -264,26 +265,6 @@ app.get('/api/health', (c) => {
     timestamp: new Date().toISOString(),
     version: '1.0.0'
   });
-});
-
-app.post('/api/game-score', async (c) => {
-  try {
-    const { user_id, game_type, score } = await c.req.json();
-    
-    // In production, this would save to database
-    const result = {
-      user_id,
-      game_type,
-      score,
-      level: Math.floor(score / 1000) + 1,
-      xp: score * 10,
-      title: score > 5000 ? 'Asteroid Expert' : score > 2000 ? 'Space Defender' : 'Cosmic Survivor'
-    };
-
-    return c.json(result);
-  } catch (error) {
-    return c.json({ error: 'Failed to save score' }, 500);
-  }
 });
 
 export default app;
