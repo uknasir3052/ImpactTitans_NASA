@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Sphere, Html } from '@react-three/drei';
 import * as THREE from 'three';
-import Navigation from '@/react-app/components/Navigation';
+import Navigation from '../components/Navigation';
 import { Play, Pause, RotateCcw, Eye, EyeOff } from 'lucide-react';
 
 interface AsteroidData {
