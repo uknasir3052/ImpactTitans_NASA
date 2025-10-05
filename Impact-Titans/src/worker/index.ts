@@ -1,6 +1,6 @@
 import { Hono } from "hono";
 import { cors } from "hono/cors";
-import { Env, AsteroidType, RiskDataType, NewsItemType } from "../shared/types";
+import type { Env, AsteroidType, RiskDataType, NewsItemType } from "../shared/types";
 
 const app = new Hono<{ Bindings: Env }>();
 
@@ -18,7 +18,7 @@ app.get('/api/asteroids', async (c) => {
     endDate.setDate(endDate.getDate() + 7);
     const endDateStr = endDate.toISOString().split('T')[0];
     
-    const url = https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${endDateStr}&api_key=${NASA_API_KEY};
+    const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${today}&end_date=${endDateStr}&api_key=${NASA_API_KEY}`;
     
     const response = await fetch(url);
     const data = await response.json() as any;

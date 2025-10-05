@@ -36,7 +36,7 @@ export default function CrosswordGame({ onScoreUpdate, onBack }: CrosswordGamePr
     },
     {
       id: 2,
-      clue: "Potentially Hazardous _ (NASA classification)",
+      clue: "Potentially Hazardous ___ (NASA classification)",
       answer: "ASTEROID",
       direction: "down",
       row: 0,
@@ -260,8 +260,8 @@ export default function CrosswordGame({ onScoreUpdate, onBack }: CrosswordGamePr
                     
                     return (
                       <div
-                        key={${row}-${col}}
-                        className={w-8 h-8 border relative ${getCellClass(row, col)}}
+                        key={`${row}-${col}`}
+                        className={`w-8 h-8 border relative ${getCellClass(row, col)}`}
                       >
                         {clueNumbers.length > 0 && (
                           <span className="absolute top-0 left-0 text-xs text-orange-400 font-bold">
@@ -372,7 +372,7 @@ export default function CrosswordGame({ onScoreUpdate, onBack }: CrosswordGamePr
                   <div className="w-full bg-slate-700 rounded-full h-2">
                     <div
                       className="bg-gradient-to-r from-orange-500 to-red-600 h-2 rounded-full transition-all duration-300"
-                      style={{ width: ${(completedClues.size / clues.length) * 100}% }}
+                      style={{ width: `${(completedClues.size / clues.length) * 100}%` }}
                     ></div>
                   </div>
                 </div>

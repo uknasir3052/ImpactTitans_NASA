@@ -56,10 +56,10 @@ export default function RiskTrendChart() {
     if (active && payload && payload.length) {
       return (
         <div className="bg-slate-800 border border-slate-600 rounded-lg p-3 shadow-lg">
-          <p className="text-white font-medium">{Date: ${label}}</p>
-          <p className="text-orange-400">{Risk Score: ${payload[0].value}}</p>
-          <p className="text-blue-400">{Active Threats: ${payload[0].payload.threats}}</p>
-          <p className="text-green-400">{Closest: ${payload[0].payload.closestApproach.toFixed(4)} AU}</p>
+          <p className="text-white font-medium">{`Date: ${label}`}</p>
+          <p className="text-orange-400">{`Risk Score: ${payload[0].value}`}</p>
+          <p className="text-blue-400">{`Active Threats: ${payload[0].payload.threats}`}</p>
+          <p className="text-green-400">{`Closest: ${payload[0].payload.closestApproach.toFixed(4)} AU`}</p>
         </div>
       );
     }
