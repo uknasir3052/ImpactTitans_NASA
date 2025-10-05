@@ -25,7 +25,7 @@ export default function Landing() {
       <div 
         className="fixed inset-0 z-0"
         style={{
-          backgroundImage: `url('https://mocha-cdn.com/0199ad4b-3460-7658-99a4-a4361a46fd3f/WhatsApp-Image-2025-10-03-at-22.39.05_e778f0c3.jpg')`,
+          backgroundImage: `url('../../../images/Landing_bg.jpg')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundAttachment: 'fixed',
@@ -42,9 +42,11 @@ export default function Landing() {
         <header className="p-6 md:p-8">
           <div className="flex items-center justify-between max-w-7xl mx-auto">
             <div className="flex items-center space-x-3">
-              <div className="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-600 rounded-lg flex items-center justify-center">
-                <Shield className="w-7 h-7 text-white" />
-              </div>
+              <img 
+                src="../../../images/app_logo.png" 
+                alt="Impact Titans Logo" 
+                className="w-20 h-20"
+              />
               <div>
                 <h1 className="text-2xl font-bold text-white">IMPACT TITANS</h1>
                 <p className="text-orange-200 text-sm">Global Asteroid Risk Management</p>
@@ -152,4 +154,3 @@ export default function Landing() {
     </div>
   );
 }
-
