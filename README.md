@@ -59,7 +59,9 @@ src/worker/
 1. *Clone and Setup*
 bash
 git clone <repository-url>
-cd impact-titans
+if not alredy in folder: 
+cd ImpactTitans_NASA
+cd Impact-Titans
 npm install
 
 
