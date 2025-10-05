@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Gamepad2, Trophy, Target, Brain } from 'lucide-react';
-import Navigation from '@/react-app/components/Navigation';
-import SurvivalGame from '@/react-app/components/SurvivalGame';
-import CrosswordGame from '@/react-app/components/CrosswordGame';
-import Leaderboard from '@/react-app/components/Leaderboard';
+import Navigation from '../components/Navigation';
+import SurvivalGame from '../components/SurvivalGame';
+import CrosswordGame from '../components/CrosswordGame';
+import Leaderboard from '../components/Leaderboard';
 
 type GameMode = 'menu' | 'survival' | 'crossword' | 'leaderboard';
 
@@ -94,7 +94,7 @@ export default function Game() {
                   onClick={() => setCurrentMode(game.id as GameMode)}
                 >
                   {/* Background Gradient */}
-                  <div className={absolute inset-0 bg-gradient-to-br ${game.color} opacity-10 group-hover:opacity-20 transition-opacity}></div>
+                  <div className={`absolute inset-0 bg-gradient-to-br ${game.color} opacity-10 group-hover:opacity-20 transition-opacity`}></div>
                   
                   {/* Content */}
                   <div className="relative z-10">
