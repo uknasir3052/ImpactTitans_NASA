@@ -28,7 +28,6 @@ export default function Navigation() {
               />
             <span className="text-xl font-bold text-white">Impact Titans</span>
           </Link>
-
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navItems.map((item) => {

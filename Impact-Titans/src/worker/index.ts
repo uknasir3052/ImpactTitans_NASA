@@ -10,7 +10,7 @@ app.use('*', cors());
 // NASA API endpoints
 app.get('/api/asteroids', async (c) => {
   try {
-    const NASA_API_KEY = "b795tq1CmOWO1QKPBDHEPQOfQYB1aOhmvhFvsbdV" ;
+    const NASA_API_KEY = "DwWOc4v2hfaF1EWJxGwZxHQzi48jSdWWK1eqWEYD" ;
     
     // Fetch Near-Earth Objects from NASA API
     const today = new Date().toISOString().split('T')[0];
@@ -253,8 +253,8 @@ app.post('/api/calculate-impact', async (c) => {
 
     return c.json(result);
   } catch (error) {
-    return c.json({ error: 'Failed to calculate impact' }, 500);
-  }
+    return c.json({ error: 'Failed to calculate impact' }, 500);
+  }
 });
 
 // Health check endpoint

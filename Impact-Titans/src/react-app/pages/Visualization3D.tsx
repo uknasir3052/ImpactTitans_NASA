@@ -121,7 +121,7 @@ export default function Visualization() {
   const [showOrbits, setShowOrbits] = useState(true);
   const [category, setCategory] = useState<'today' | 'week' | 'month'>('today');
 
-  const API_KEY = 'b795tq1CmOWO1QKPBDHEPQOfQYB1aOhmvhFvsbdV'; // replace with your NASA API key
+  const API_KEY = 'DwWOc4v2hfaF1EWJxGwZxHQzi48jSdWWK1eqWEYD'; // replace with your NASA API key
 
   useEffect(() => {
     async function fetchAsteroids() {

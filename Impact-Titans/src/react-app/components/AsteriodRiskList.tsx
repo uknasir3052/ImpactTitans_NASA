@@ -24,7 +24,9 @@ export default function AsteroidRiskList() {
       if (response.ok) {
         const data = await response.json();
         setAsteroids(data);
-      } else {
+      } 
+      else 
+        {
         // Fallback data for demo
         setAsteroids([
           {
@@ -120,11 +122,7 @@ export default function AsteroidRiskList() {
       
       <div className="space-y-3 max-h-96 overflow-y-auto">
         {asteroids.map((asteroid) => (
-            
-          <div
-            key={asteroid.id}
-            className="bg-slate-900/50 border border-slate-600 rounded-lg p-4 hover:bg-slate-900/80 transition-all duration-200"
-          >
+          <div key={asteroid.id} className="bg-slate-900/50 border border-slate-600 rounded-lg p-4 hover:bg-slate-900/80 transition-all duration-200">
             <div className="flex items-center justify-between mb-2">
               <h4 className="font-medium text-white">{asteroid.name}</h4>
               <div className={`flex items-center gap-1 px-2 py-1 rounded-full text-xs border ${getRiskColor(asteroid.risk_level)}`}>
