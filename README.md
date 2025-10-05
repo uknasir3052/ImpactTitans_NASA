@@ -59,13 +59,16 @@ src/worker/
 1. *Clone and Setup*
 bash
 git clone <repository-url>
-cd impact-titans
+if not alredy in folder: 
+cd ImpactTitans_NASA
+cd Impact-Titans
 npm install
 
 
 2. *Environment Configuration*
 bash
 # Set up NASA API key 
+# from api.nasa.gov site
 # Create .env file with NASA_API_KEY = //enter your api key here 
 
 
